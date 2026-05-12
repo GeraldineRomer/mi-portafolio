@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500&family=Fira+Code:wght@400;500&display=swap');
+
+/* Variables globales */
+:root {
+  --color-bg: #0d0d14;
+  --color-surface: #13131f;
+  --color-card: #1c1c2e;
+  --color-accent: #B14EFF;
+  --color-accent-hover: #7C3AED;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #8888aa;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-hover);
+  border-radius: 3px;
+}
