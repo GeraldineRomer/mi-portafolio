@@ -24,6 +24,38 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', onScroll)
     }, [])
 
+    // Detectar sección activa según scroll
+    useEffect(() => {
+        const sections = navLinks.map((link) => ({
+            id: link.href.replace("#", ""),
+            label: link.label,
+        }))
+
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY + window.innerHeight / 3
+
+            sections.forEach((section) => {
+                const element = document.getElementById(section.id)
+                
+                if (element) {
+                    const offsetTop = element.offsetTop
+                    const offsetHeight = element.offsetHeight
+
+                    if (
+                        scrollPosition >= offsetTop &&
+                        scrollPosition < offsetTop + offsetHeight
+                    ) {
+                        setActiveLink(section.label)
+                    }
+                }
+            })
+        }
+
+        window.addEventListener("scroll", handleScroll)
+
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
+
     // Nombre formateado como logo: geraldine_romero.dev
     const logoText = personalInfo.name
         .toLowerCase()
@@ -36,16 +68,17 @@ export default function Navbar() {
                 flex items-center justify-between
                 px-8 py-3.5
                 transition-all duration-300
-                ${scrolled
-                ? 'bg-[#0d0d14]/85 backdrop-blur-md border-b border-[#B14EFF]/15'
-                : 'bg-transparent border-b border-transparent'
+                ${
+                    scrolled
+                        ? 'bg-[#0d0d14]/85 backdrop-blur-md border-b border-[#B14EFF]/15'
+                        : 'bg-transparent border-b border-transparent'
                 }
             `}
         >
             {/* Logo */}
             <a
                 href="#inicio"
-                className="font-mono text-sm font-medium text-[#B14EFF] tracking-wide"
+                className="font-mono text-xl font-medium text-[#B14EFF] tracking-wide"
             >
                 {logoText}
             </a>
@@ -53,13 +86,13 @@ export default function Navbar() {
             {/* Links */}
             <ul className="flex items-center gap-7 list-none">
                 {navLinks.map((link) => (
-                <NavLink
-                    key={link.href}
-                    label={link.label}
-                    href={link.href}
-                    isActive={activeLink === link.label}
-                    onClick={() => setActiveLink(link.label)}
-                />
+                    <NavLink
+                        key={link.href}
+                        label={link.label}
+                        href={link.href}
+                        isActive={activeLink === link.label}
+                        onClick={() => setActiveLink(link.label)}
+                    />
                 ))}
             </ul>
 
