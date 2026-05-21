@@ -45,7 +45,7 @@ export default function Navbar() {
             {/* Logo */}
             <a
                 href="#inicio"
-                className="font-mono text-sm font-medium text-[#B14EFF] tracking-wide"
+                className="font-mono text-xl font-medium text-[#B14EFF] tracking-wide"
             >
                 {logoText}
             </a>
@@ -53,13 +53,13 @@ export default function Navbar() {
             {/* Links */}
             <ul className="flex items-center gap-7 list-none">
                 {navLinks.map((link) => (
-                <NavLink
-                    key={link.href}
-                    label={link.label}
-                    href={link.href}
-                    isActive={activeLink === link.label}
-                    onClick={() => setActiveLink(link.label)}
-                />
+                    <NavLink
+                        key={link.href}
+                        label={link.label}
+                        href={link.href}
+                        isActive={activeLink === link.label}
+                        onClick={() => setActiveLink(link.label)}
+                    />
                 ))}
             </ul>
 
