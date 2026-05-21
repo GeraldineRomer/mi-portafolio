@@ -3,7 +3,7 @@ export const personalInfo = {
     role: "Web Developer · Data Analyst · AI Enthusiast",
     banner1: "La web es mi lienzo,",
     banner2: "los datos mi lenguaje.",
-    bio: "Ingeniera de sistemas recién graduada, apasionada por el desarrollo web y la inteligencia artificial. Creo en el aprendizaje continuo como motor de crecimiento.",
+    bio: "Soy Geraldine, ingeniera de sistemas recién graduada con mucha curiosidad. Me apasiona el desarrollo web y el análisis de datos, y últimamente no puedo dejar de explorar cómo la inteligencia artificial puede hacer que todo sea más interesante.\nEstoy buscando mi primera oportunidad en la industria del software, ese lugar donde pueda aprender rápido, aportar desde el primer día y crecer junto a un equipo.\nFuera del código, soy creadora de contenido sobre reseñas de libros, estoy aprendiendo a bailar ritmos argentinos y a tocar el piano — porque aparentemente una pantalla no es suficiente para mí.",
     email: "tuemail@gmail.com", //pendiente crear correo freelancer
     github: "https://github.com/GeraldineRomer", 
     linkedin: "https://www.linkedin.com/in/geraldine-romero-47476b257/",
