@@ -54,7 +54,7 @@ export default function Photo3D() {
         {/* Badge de disponibilidad */}
         <div className="absolute -bottom-1 -right-1 flex items-center gap-1.5 bg-[#13131f] border border-[#B14EFF]/25 rounded-full px-2.5 py-1">
             <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            <span className="font-mono text-[10px] text-[#8888aa]">disponible</span>
+            <span className="font-mono text-[15px] text-[#8888aa]">disponible</span>
         </div>
         </div>
     )

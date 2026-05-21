@@ -84,14 +84,14 @@ export default function Hero() {
                             href="#proyectos"
                             className="inline-flex items-center gap-2 bg-[#B14EFF] hover:bg-[#7C3AED] text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors duration-200"
                         >
-                            <IconFolder size={16} />
+                            <IconFolder size={18} />
                             Ver proyectos
                         </a>
                         <a
                             href="#contacto"
                             className="inline-flex items-center gap-2 border border-[#B14EFF]/40 text-white/60 hover:text-white hover:border-[#B14EFF]/70 text-sm px-5 py-2.5 rounded-lg transition-colors duration-200"
                         >
-                            <IconMail size={16} />
+                            <IconMail size={18} />
                             Contactar
                         </a>
                     </motion.div>
@@ -108,7 +108,7 @@ export default function Hero() {
                             rel="noreferrer"
                             className="text-[#8888aa] hover:text-[#B14EFF] transition-colors duration-200"
                         >
-                            <IconBrandGithub size={20} />
+                            <IconBrandGithub size={30} />
                         </a>
                         <a
                             href={personalInfo.linkedin}
@@ -116,11 +116,11 @@ export default function Hero() {
                             rel="noreferrer"
                         className="text-[#8888aa] hover:text-[#B14EFF] transition-colors duration-200"
                         >
-                            <IconBrandLinkedin size={20} />
+                            <IconBrandLinkedin size={30} />
                         </a>
                         {/* Línea separadora */}
                         <div className="w-px h-4 bg-[#8888aa]/30" />
-                        <span className="font-mono text-[10px] text-[#8888aa]/50">
+                        <span className="font-mono text-[15px] text-[#8888aa]/50">
                             {personalInfo.email}
                         </span>
                     </motion.div>

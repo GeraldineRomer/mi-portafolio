@@ -12,22 +12,22 @@ export default function RightPanel() {
 
         {/* Card disponibilidad */}
         <div className="bg-[#13131f] border border-[#B14EFF]/15 rounded-xl p-4">
-            <p className="font-mono text-[10px] text-[#B14EFF]/70 mb-3">// estado actual</p>
+            <p className="font-mono text-[18px] text-[#B14EFF]/70 mb-3">// estado actual</p>
             <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                <span className="text-xs text-[#8888aa]">Disponible para proyectos</span>
+                <span className="text-sm text-[#8888aa]">Disponible para proyectos</span>
             </div>
             <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#B14EFF]" />
-                <span className="text-xs text-[#8888aa]">Abierta a oportunidades</span>
+                <span className="text-sm text-[#8888aa]">Abierta a oportunidades</span>
             </div>
             </div>
         </div>
 
         {/* Card tech stack */}
         <div className="bg-[#13131f] border border-[#B14EFF]/15 rounded-xl p-4">
-            <p className="font-mono text-[10px] text-[#B14EFF]/70 mb-3">// tech stack</p>
+            <p className="font-mono text-[18px] text-[#B14EFF]/70 mb-3">// tech stack</p>
             <div className="flex flex-wrap gap-2">
             {techStack.map((tech) => (
                 <span
