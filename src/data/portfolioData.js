@@ -1,3 +1,4 @@
+
 export const personalInfo = {
     name: "Geraldine Romero",
     role: "Web Developer · Data Analyst · AI Enthusiast",
@@ -7,6 +8,24 @@ export const personalInfo = {
     email: "tuemail@gmail.com", //pendiente crear correo freelancer
     github: "https://github.com/GeraldineRomer", 
     linkedin: "https://www.linkedin.com/in/geraldine-romero-47476b257/",
+    // Redes sociales para Contact
+    socials: [
+        {
+        label: 'GitHub',
+        href:  'https://github.com/GeraldineRomer',
+        user:  '@GeraldineRomer',
+        },
+        {
+        label: 'LinkedIn',
+        href:  'https://linkedin.com/in/geraldine-romero-47476b257/',
+        user:  'in/geraldine-romero',
+        },
+        {
+        label: 'Email',
+        href:  'mailto:tuemail@gmail.com',
+        user:  'tuemail@gmail.com',
+        },
+    ],
 }
 
 export const stats = [
