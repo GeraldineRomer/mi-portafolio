@@ -90,7 +90,65 @@ export const timeline = [
 ]
 
 export const learning = [
-    { icon: "brain",    text: "Generative AI Leader Certification", status: "en progreso" },
-    { icon: "language", text: "Inglés técnico — nivel intermedio",         status: "activo" },
-    { icon: "react",    text: "AWS Cloud Practitioner",                  status: "en progreso" },
+    {
+        emoji:  '🤖',
+        text:   'AWS Cloud Practitioner',
+        detail: 'AWS & Nequi',
+        status: 'en progreso',
+    },
+    {
+        emoji:  '🌐',
+        text:   'Inglés',
+        detail: 'American School Way',
+        status: 'en progreso',
+    },
+    {
+        emoji:  '🤖',
+        text:   'Google Generative AI Leader',
+        detail: 'Google Academy',
+        status: 'pendiente',
+    },
 ]
+
+// ─── EMOJIS TECH PARA LEARNING LOG ───────────────────────────────────────────
+
+// Lenguajes & código
+// 💻 Computador        🖥️  Monitor           ⌨️  Teclado
+// 🖱️  Mouse            📱  Móvil             🔌  Cable/Plugin
+// ⚙️  Engranaje        🔧  Llave inglesa      🛠️  Herramientas
+// 🔩  Tornillo         🔑  Llave             🗝️  Llave antigua
+
+// Desarrollo web
+// 🌐  Web/Globe        📡  Señal/API          🔗  Link/Cadena
+// 🖼️  Frontend         📐  Diseño/Layout      🎨  CSS/Diseño
+// ✏️  Editor           📝  Notas/Docs         🗂️  Archivos
+
+// Datos & análisis
+// 📊  Gráfica barras   📈  Tendencia arriba   📉  Tendencia abajo
+// 🗃️  Base de datos    📦  Paquete/Package    🗄️  Servidor/Storage
+// 🔢  Números          🧮  Cálculo            📋  Lista/Tabla
+
+// Inteligencia artificial
+// 🤖  Robot/IA         🧠  Cerebro/ML         🔮  Predicción
+// ⚡  Velocidad/GPU    🌊  Data flow          🧬  Algoritmo
+// 👁️  Visión artificial 🗣️  NLP/Lenguaje      🎯  Precisión/Accuracy
+
+// Frameworks & herramientas
+// ⚛️  React            🟢  Node.js            🐍  Python
+// 🐳  Docker           ☁️  Cloud/AWS          🔥  Firebase
+// 🐙  GitHub           📦  npm/Package        🚀  Deploy/Vercel
+// 🧪  Testing          🔍  Debug/Search       📌  Importante
+
+// Aprendizaje & crecimiento
+// 📚  Libros/Docs      🎓  Certificación      📖  Curso/Lectura
+// ✅  Completado       🔄  En progreso        ⏳  Pendiente
+// 🏆  Logro            🌱  Crecimiento        💡  Idea/Concepto
+// 🗺️  Roadmap          🧩  Puzzle/Problema    🎯  Meta/Objetivo
+
+// Idiomas & comunicación
+// 🌍  Global/Idiomas   💬  Conversación       📢  Comunicación
+// ✍️  Escritura        🗨️  Diálogo            🌐  Multilenguaje
+
+// Seguridad & sistemas
+// 🔐  Seguridad        🛡️  Protección         🔏  Encriptación
+// 🖧  Red              📶  Conectividad       🧱  Arquitectura
