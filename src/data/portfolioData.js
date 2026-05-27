@@ -49,22 +49,43 @@ export const timeline = [
     {
         year: "2021 — 2026",
         title: "Ingeniera de Sistemas",
-        description: "Universidad Autónoma de Manizales · énfasis en desarrollo web y datos",
+        description: "Universidad Autónoma de Manizales",
         type: "formal",
     },
     {
-        year: "2026",
-        title: "Fundamentos de la nube AWS",
+        year: "2026 (3 horas)",
+        title: "Fundamentos de la Nube AWS",
         description: "Nequi",
+        type: "informal",
+        badge: "certificación",
+    },
+    {
+        year: "2026 (2 horas)",
+        title: "AI Design Patterns with Ollama",
+        description: "Udemy",
         type: "informal",
         badge: "certificación",
     },
     {
         year: "2026",
         title: "Inglés",
-        description: "Aprendizaje activo · en progreso",
+        description: "American School Way",
         type: "formal",
         badge: "en curso",
+    },
+    {
+        year: "Febrero 2025 - Junio 2025",
+        title: "Ingenieria de Sistemas | Apoyo voluntario",
+        description: "Hospital San Lorenzo de Supía",
+        type: "work",
+        badge: "finalizado",
+    },
+    {
+        year: "Julio 2025 - Enero 2026",
+        title: "Aprendiz (Analista) de Ingeniería de Software",
+        description: "Bancolombia",
+        type: "work",
+        badge: "finalizado",
     },
 ]
 
