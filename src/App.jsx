@@ -7,6 +7,7 @@ import Projects from "./components/Projects"
 import Timeline from "./components/Timeline"
 import LearningLog from "./components/LearningLog"
 import Contact from "./components/Contact"
+import Footer from "./components/Footer"
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
       <Timeline />
       <LearningLog />
       <Contact />
+      <Footer />
     </main>
   )
 }
