@@ -45,22 +45,24 @@ export const skills = [
 
 export const projects = [
     {
-        id: 1,
-        title: "Dashboard para manejo de redes sociales con IA",
-        description: "Visualización de datos en tiempo real con predicciones ML integradas.",
-        technologies: ["React", "Python", "ML", "Power BI"],
-        github: "https://github.com/tunombre/proyecto1",
-        live: "https://proyecto1.vercel.app",
-        icon: "chart",
+        id:           1,
+        title:        "Nombre del proyecto",
+        description:  "Descripción detallada del proyecto, qué problema resuelve y qué aprendiste construyéndolo.",
+        technologies: ["React", "Python", "ML"],
+        github:       "https://github.com/GeraldineRomer/proyecto",
+        live:         "https://proyecto.vercel.app",
+        screenshot:   null, // reemplaza con "/assets/projects/proyecto1.png" cuando tengas la imagen
+        featured:     true,
     },
     {
-        id: 2,
-        title: "Portafolio Diseñador Mecánico con Asistente IA",
-        description: "Portafolio web con asistente IA que responde preguntas sobre la experiencia y proyectos en tiempo real, al igual que contacta.",
-        technologies: ["Claude API", "React"],
-        github: "https://github.com/tunombre/proyecto2",
-        live: "https://proyecto2.vercel.app",
-        icon: "robot",
+        id:           2,
+        title:        "Otro proyecto",
+        description:  "Descripción detallada del proyecto, qué problema resuelve y qué aprendiste construyéndolo.",
+        technologies: ["Claude API", "React", "Node.js"],
+        github:       "https://github.com/GeraldineRomer/proyecto2",
+        live:         null, // null si no tiene sitio web desplegado
+        screenshot:   null,
+        featured:     true,
     },
 ]
 
