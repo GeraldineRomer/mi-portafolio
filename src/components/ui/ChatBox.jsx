@@ -7,7 +7,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai"
 
 // ─── Inicializar Gemini ───────────────────────────────────────────────────────
 const getModel = () => {
-    const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY)
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY
+    const genAI = new GoogleGenerativeAI({ apiKey })
     return genAI.getGenerativeModel({ model: 'gemini-2.0-flash' })
 }
 
@@ -58,6 +59,7 @@ export default function ChatBox() {
 
     const sendMessage = async (text) => {
         const userText = text || input.trim()
+        
         if (!userText || loading) return
 
         // Agrega mensaje del usuario
@@ -67,14 +69,19 @@ export default function ChatBox() {
 
         try {
             const model = getModel()
+            
             const chat = model.startChat({
                 history: [],
                 generationConfig: { maxOutputTokens: 300 },
             })
-
+            console.log('Chat ', chat);
+            
             const prompt = `${buildContext()}\n\nPregunta del visitante: ${userText}`
+            console.log('Prompt ', prompt);
             const result = await chat.sendMessage(prompt)
+            console.log('Result ', result);
             const text   = await result.response.text()
+            console.log('Text ', text);
 
             setMessages((prev) => [...prev, { role: 'assistant', content: text }])
         } catch (error) {
