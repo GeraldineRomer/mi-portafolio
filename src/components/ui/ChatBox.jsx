@@ -5,16 +5,13 @@ import MessageBubble from "./MessageBubble"
 import TypingIndicator from "./TypingIndicator"
 import { GoogleGenerativeAI } from "@google/generative-ai"
 
-// ─── Inicializar Gemini ───────────────────────────────────────────────────────
-const getModel = () => {
-    const apiKey = import.meta.env.VITE_GEMINI_API_KEY
-    const genAI = new GoogleGenerativeAI({ apiKey })
-    return genAI.getGenerativeModel({ model: 'gemini-2.0-flash' })
-}
 
 // ─── Contexto del portafolio para el chatbot ─────────────────────────────────
 const buildContext = () => `
     Eres el asistente virtual del portafolio de ${personalInfo.name}.
+
+    REGLA DE ORO: Cuando el visitante te haga preguntas usando "tú" o hable en segunda persona (ej. "¿cuál es tu stack?", "¿qué proyectos tienes?", "¿buscas trabajo?"), ASUME SIEMPRE que se refieren a ${personalInfo.name}, NO a ti como IA. Responde entregando la información de ella.
+    
     Tu función es responder preguntas sobre ella de forma cercana, breve y profesional.
     Responde siempre en español, con un tono conversacional y amigable.
     No inventes información — si no sabes algo, dilo con honestidad.
@@ -38,6 +35,19 @@ const buildContext = () => `
     LinkedIn: ${personalInfo.linkedin}
 `
 
+// ─── Inicializar Gemini ───────────────────────────────────────────────────────
+const getModel = () => {
+    
+    const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY)
+    return genAI.getGenerativeModel({ 
+        model: 'gemini-3.5-flash',
+        generationConfig: { 
+            maxOutputTokens: 1500, 
+            temperature: 0.7
+        },
+        systemInstruction: buildContext()
+    })
+}
 
 // ─── Subcomponente: chat ──────────────────────────────────────────────────────
 export default function ChatBox() {
@@ -49,12 +59,14 @@ export default function ChatBox() {
     ])
     const [input,   setInput]   = useState('')
     const [loading, setLoading] = useState(false)
-    const bottomRef             = useRef(null)
+    
     const chatRef               = useRef(null)
 
-    // Scroll automático al último mensaje
+    // Scroll automático solo dentro del contenedor del chat (sin mover la página)
     useEffect(() => {
-        bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+        if (chatRef.current) {
+            chatRef.current.scrollTop = chatRef.current.scrollHeight
+        }
     }, [messages, loading])
 
     const sendMessage = async (text) => {
@@ -72,13 +84,12 @@ export default function ChatBox() {
             
             const chat = model.startChat({
                 history: [],
-                generationConfig: { maxOutputTokens: 300 },
             })
             console.log('Chat ', chat);
             
-            const prompt = `${buildContext()}\n\nPregunta del visitante: ${userText}`
-            console.log('Prompt ', prompt);
-            const result = await chat.sendMessage(prompt)
+            /* const prompt = `${buildContext()}\n\nPregunta del visitante: ${userText}`
+            console.log('Prompt ', prompt); */
+            const result = await chat.sendMessage(userText)
             console.log('Result ', result);
             const text   = await result.response.text()
             console.log('Text ', text);
@@ -86,13 +97,19 @@ export default function ChatBox() {
             setMessages((prev) => [...prev, { role: 'assistant', content: text }])
         } catch (error) {
             console.error('Error en el chat:', error)
+            // Convertimos el error a texto para buscar palabras clave
+            const errorText = error.toString().toLowerCase();
+            let friendlyMessage = 'Lo siento, tuve un problema interno. Por favor, contacta a Geraldine por email. 😊';
+
+            // Detectamos si es un error de cuota (429) o saturación (503 / overloaded)
+            if (errorText.includes('503') || errorText.includes('overloaded') || errorText.includes('429') || errorText.includes('quota')) {
+                friendlyMessage = '¡Uf! Estoy recibiendo muchas visitas y mi servidor está tomando un respiro. ⏳ ¿Podrías intentar preguntarme de nuevo en unos segundos?';
+            }
+
             setMessages((prev) => [
                 ...prev,
-                {
-                role:    'assistant',
-                content: 'Lo siento, tuve un problema al responder. Puedes contactar a Geraldine directamente por email. 😊',
-                },
-            ])
+                { role: 'assistant', content: friendlyMessage },
+            ]);
         } finally {
             setLoading(false)
         }
@@ -115,7 +132,7 @@ export default function ChatBox() {
                 </div>
                 <div className="flex flex-col">
                     <span className="text-sm font-medium text-white/80">Asistente IA</span>
-                    <span className="font-mono text-[12px] text-[#8888aa]/60">powered by Gemini 2.0 Flash</span>
+                    <span className="font-mono text-[12px] text-[#8888aa]/60">powered by Gemini-3.5-flash</span>
                 </div>
                 <div className="ml-auto flex items-center gap-1.5">
                     <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
@@ -132,7 +149,7 @@ export default function ChatBox() {
                     <MessageBubble key={i} message={msg} />
                 ))}
                 {loading && <TypingIndicator />}
-                <div ref={bottomRef} />
+                
             </div>
 
             {/* Input */}

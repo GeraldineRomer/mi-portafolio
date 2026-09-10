@@ -78,7 +78,7 @@ export default function Navbar() {
             {/* Logo */}
             <a
                 href="#inicio"
-                className="font-mono text-xl font-medium text-[#B14EFF] tracking-wide"
+                className="font-mono text-xm font-medium text-[#B14EFF] tracking-wide"
             >
                 {logoText}
             </a>

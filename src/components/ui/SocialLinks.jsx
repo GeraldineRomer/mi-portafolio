@@ -6,7 +6,6 @@ export default function SocialLinks() {
     const links = [
         { icon: <IconBrandGithub size={30} />,   href: personalInfo.github,   label: 'GitHub'   },
         { icon: <IconBrandLinkedin size={30} />, href: personalInfo.linkedin, label: 'LinkedIn' },
-        { icon: <IconMail size={30} />,          href: `mailto:${personalInfo.email}`, label: 'Email' },
     ]
 
     return (

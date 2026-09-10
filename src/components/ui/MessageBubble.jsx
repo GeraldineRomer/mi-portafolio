@@ -1,5 +1,6 @@
 import { IconRobot, IconUser } from '@tabler/icons-react'
 import { motion } from 'framer-motion'
+import ReactMarkdown from 'react-markdown'
 
 // ─── Subcomponente: burbuja de mensaje ───────────────────────────────────────
 export default function MessageBubble({ message }) {
@@ -34,7 +35,15 @@ export default function MessageBubble({ message }) {
                     : 'bg-[#13131f] border border-[#B14EFF]/10 text-[#8888aa] rounded-tl-none'
                 }
             `}>
-                {message.content}
+                {/* Si es el usuario, muestra texto plano. Si es la IA, renderiza Markdown */}
+                {isUser ? (
+                    message.content
+                ) : (
+                    <ReactMarkdown>
+                        {message.content}
+                    </ReactMarkdown>
+                )}
+                
             </div>
         </motion.div>
     )

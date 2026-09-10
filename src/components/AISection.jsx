@@ -55,10 +55,10 @@ export default function AISection() {
                             </h2>
                             <p className="text-sm text-[#8888aa] leading-relaxed">
                                 Este asistente conoce mi stack, proyectos y disponibilidad.
-                                Está construido con <span className="text-[#B14EFF]">Gemini 2.0 Flash</span> e
+                                Está construido con <span className="text-[#B14EFF]">Gemini-3.5-flash</span> e
                                 integrado directamente en mi portafolio.
                             </p>
-                            <p className="font-mono text-sm text-[#B14EFF]/50 border-l-2 border-[#B14EFF]/30 pl-4">
+                            <p className="font-mono text-xs text-[#B14EFF]/50 border-l-2 border-[#B14EFF]/30 pl-4">
                                 // así es como integro IA en proyectos reales
                             </p>
                         </div>
@@ -67,10 +67,10 @@ export default function AISection() {
                         <div className="bg-[#13131f] border border-[#B14EFF]/15 rounded-xl p-5">
                         <p className="font-mono text-[15px] text-[#B14EFF]/70 mb-4">// herramientas que uso</p>
                             <div className="flex flex-wrap gap-2">
-                                {['Gemini API', 'Claude API', 'LangChain', 'HuggingFace', 'scikit-learn', 'Pandas'].map((tool) => (
+                                {['Gemini API', 'Pinecone', 'LangChain', 'Pandas'].map((tool) => (
                                     <span
                                         key={tool}
-                                        className="text-sm px-3 py-1 rounded-full border border-[#B14EFF]/25 text-[#B14EFF] bg-[#B14EFF]/06 hover:bg-[#B14EFF]/15 transition-colors duration-200 cursor-default"
+                                        className="text-xs px-3 py-1 rounded-full border border-[#B14EFF]/25 text-[#B14EFF] bg-[#B14EFF]/06 hover:bg-[#B14EFF]/15 transition-colors duration-200 cursor-default"
                                     >
                                         {tool}
                                     </span>
@@ -85,7 +85,7 @@ export default function AISection() {
                                 <button
                                     key={s}
                                     onClick={() => document.querySelector('#chat-input')?.focus()}
-                                    className="text-left text-sm text-[#8888aa] border border-[#B14EFF]/10 hover:border-[#B14EFF]/35 hover:text-white bg-[#13131f] rounded-lg px-4 py-2.5 transition-all duration-200"
+                                    className="text-left text-xs text-[#8888aa] border border-[#B14EFF]/10 hover:border-[#B14EFF]/35 hover:text-white bg-[#13131f] rounded-lg px-4 py-2.5 transition-all duration-200"
                                 >
                                     {s}
                                 </button>

@@ -1,11 +1,13 @@
 
+import project1Screenshot from "../assets/projects/project1.png";
+
 export const personalInfo = {
     name: "Geraldine Romero",
     role: "Web Developer · Data Analyst · AI Enthusiast",
     banner1: "La web es mi lienzo,",
     banner2: "los datos mi lenguaje.",
     bio: "Soy Geraldine, ingeniera de sistemas recién graduada con mucha curiosidad. Me apasiona el desarrollo web y el análisis de datos, y últimamente no puedo dejar de explorar cómo la inteligencia artificial puede hacer que todo sea más interesante.\nEstoy buscando mi primera oportunidad en la industria del software, ese lugar donde pueda aprender rápido, aportar desde el primer día y crecer junto a un equipo.\nFuera del código, soy creadora de contenido sobre reseñas de libros, estoy aprendiendo a bailar ritmos argentinos y a tocar el piano — porque aparentemente una pantalla no es suficiente para mí.",
-    email: "tuemail@gmail.com", //pendiente crear correo freelancer
+    email: "geraldineromero.ingeniera@gmail.com", //pendiente crear correo freelancer
     github: "https://github.com/GeraldineRomer", 
     linkedin: "https://www.linkedin.com/in/geraldine-romero-47476b257/",
     // Redes sociales para Contact
@@ -22,44 +24,65 @@ export const personalInfo = {
         },
         {
         label: 'Email',
-        href:  'mailto:tuemail@gmail.com',
-        user:  'tuemail@gmail.com',
+        href:  'geraldineromero.ingeniera@gmail.com',
+        user:  'geraldineromero.ingeniera@gmail.com',
         },
     ],
 }
 
 export const stats = [
-    { number: "1+", label: "proyectos" },
+    { number: "2+", label: "proyectos" },
     { number: "4",   label: "lenguajes" },
     { number: "1",   label: "objetivo" },
 ]
 
 export const skills = [
     { name: "React",        category: "frontend", level: 3 },
-    { name: "JavaScript",   category: "frontend", level: 3 },
-    { name: "CSS / Tailwind",category: "frontend", level: 2 },
-    { name: "Python",       category: "data",     level: 2 },
-    { name: "SQL",          category: "data",     level: 2 },
-    { name: "AI / APIs",    category: "data",     level: 2 },
+    { name: "React Native", category: "frontend", level: 2 },
+    { name: "Angular",category: "frontend", level: 2 },
+    { name: "CSS / Tailwind",category: "frontend", level: 3 },
+    { name: "NodeJS",category: "backend", level: 3 },
+    { name: "FastAPI",category: "backend", level: 3 },
+    { name: "Flask",category: "backend", level: 2 },
+    { name: "Python",       category: "Lenguages",     level: 4 },
+    { name: "JavaScript",   category: "Lenguages", level: 3 },
+    { name: "TypeScript",   category: "Lenguages", level: 3 },
+    { name: "MySQL Workbench",          category: "database",     level: 4 },
+    { name: "SQL Server",          category: "database",     level: 4 },
+    { name: "MongoDB",          category: "database",     level: 3 },
+    { name: "Pinecone",          category: "database",     level: 2 },
+    { name: "Google Gemini API",    category: "data",     level: 3 },
+    { name: "LangChain",    category: "data",     level: 2 },
+    { name: "PowerBI",    category: "data",     level: 2 },
+    { name: "Power Apps",    category: "automation",     level: 3 },
+    { name: "Power Automate",    category: "automation",     level: 3 },
+    { name: "N8N",    category: "automation",     level: 2 },
+    { name: "AWS",    category: "cloud",     level: 2 },
+    { name: "Google Cloud",    category: "cloud",     level: 2 },
+    { name: "Excel",    category: "ofimatica",     level: 3 },
+    { name: "Word",    category: "ofimatica",     level: 3 },
+    { name: "PowerPoint",    category: "ofimatica",     level: 3 },
+    { name: "GitHub",    category: "another",     level: 3 },
+    { name: "Scrum",    category: "another",     level: 3 },
 ]
 
 export const projects = [
     {
         id:           1,
-        title:        "Nombre del proyecto",
-        description:  "Descripción detallada del proyecto, qué problema resuelve y qué aprendiste construyéndolo.",
-        technologies: ["React", "Python", "ML"],
-        github:       "https://github.com/GeraldineRomer/proyecto",
-        live:         "https://proyecto.vercel.app",
-        screenshot:   null, // reemplaza con "/assets/projects/proyecto1.png" cuando tengas la imagen
+        title:        "Chatbot RAG Multi-Tenant - Gestiòn y consulta de Documentos",
+        description:  "Chatbot que cuenta con un sistema de recuperación de información (RAG) para gestionar y consultar documentos. Permite a los usuarios interactuar con el sistema mediante preguntas y respuestas, proporcionando información relevante basada en los documentos almacenados.",
+        technologies: ["FastAPI","Python", "LangChain", "Pinecone Cloud", "Google Gemini API", "React", "Vercel", "Render"],
+        github:       "https://github.com/GeraldineRomer/Chatbot-RAG",
+        live:         "https://chatbot-rag-frontend-one.vercel.app",
+        screenshot:   project1Screenshot, // reemplaza con "/assets/projects/proyecto1.png" cuando tengas la imagen
         featured:     true,
     },
     {
         id:           2,
-        title:        "Otro proyecto",
-        description:  "Descripción detallada del proyecto, qué problema resuelve y qué aprendiste construyéndolo.",
-        technologies: ["Claude API", "React", "Node.js"],
-        github:       "https://github.com/GeraldineRomer/proyecto2",
+        title:        "TO-Do List App",
+        description:  "Aplicación web de lista de tareas que permite a los usuarios crear, editar y eliminar tareas.",
+        technologies: ["FastAPI", "Python", "Angular"],
+        github:       "https://github.com/GeraldineRomer/Backend-To-Do-App",
         live:         null, // null si no tiene sitio web desplegado
         screenshot:   null,
         featured:     true,
@@ -72,6 +95,20 @@ export const timeline = [
         title: "Ingeniera de Sistemas",
         description: "Universidad Autónoma de Manizales",
         type: "formal",
+    },
+    {
+        year: "2026 (13 horas)",
+        title: "AWS Cloud Practitioner Essentials",
+        description: "AWS Entrena LATAM",
+        type: "informal",
+        badge: "certificación",
+    },
+    {
+        year: "2026 (10 horas)",
+        title: "Power BI + IA",
+        description: "Daxus",
+        type: "informal",
+        badge: "certificación",
     },
     {
         year: "2026 (3 horas)",
@@ -115,7 +152,7 @@ export const learning = [
         emoji:  '🤖',
         text:   'AWS Cloud Practitioner',
         detail: 'AWS & Nequi',
-        status: 'en progreso',
+        status: 'finalizado',
     },
     {
         emoji:  '🌐',
@@ -125,8 +162,8 @@ export const learning = [
     },
     {
         emoji:  '🤖',
-        text:   'Google Generative AI Leader',
-        detail: 'Google Academy',
+        text:   'Curso Gratis para Crear Agentes de AI con Copilot Studio',
+        detail: 'Platzi',
         status: 'pendiente',
     },
 ]
