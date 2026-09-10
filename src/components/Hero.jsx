@@ -4,7 +4,6 @@ import {
     IconBrandLinkedin,
     IconFolder,
     IconMail,
-    IconCircle,
 } from '@tabler/icons-react'
 import { personalInfo } from '../data/portfolioData'
 import GridBackground from './ui/GridBackground'
@@ -18,7 +17,7 @@ export default function Hero() {
             className="relative min-h-screen flex items-center pt-20 overflow-hidden"
         >
             <GridBackground />
-            <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center px-6">
+            <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center px-6 md:px-12 lg:px-16">
                 {/* ── Columna izquierda ── */}
                 <div className="flex flex-col gap-5">
                     {/* Badge */}

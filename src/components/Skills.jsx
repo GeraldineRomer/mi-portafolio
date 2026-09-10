@@ -10,7 +10,13 @@ const fadeUp = {
 
 const categories = [
     { key: 'frontend', label: '// frontend'  },
+    { key: 'backend', label: '// backend'   },
     { key: 'data',     label: '// data & AI' },
+    { key: 'database', label: '// base de datos' },
+    { key: 'cloud',    label: '// cloud' },
+    { key: 'automation', label: '// Automatizaciones' },
+    { key: 'ofimatica', label: '// Ofimática' },
+    { key: 'another', label: '// Otros' },
 ]
 
 export default function Skills() {

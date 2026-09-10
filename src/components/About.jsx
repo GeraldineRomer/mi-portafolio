@@ -87,7 +87,7 @@ export default function About() {
                         <div className="bg-[#13131f] border border-[#B14EFF]/15 rounded-xl p-5">
                             <p className="font-mono text-[15px] text-[#B14EFF]/70 mb-4">// stack actual</p>
                             <div className="flex flex-wrap gap-2">
-                                {['React', 'JavaScript', 'Python', 'SQL', 'Tailwind', 'AI / APIs', 'Git'].map((tech) => (
+                                {['React', 'JavaScript', 'Python', 'PostgreeSQL', 'Tailwind', 'Google Gemini API', 'Git', 'LangChain', 'AWS', 'Pinecone'].map((tech) => (
                                     <span
                                         key={tech}
                                         className="text-sm px-3 py-1 rounded-full border border-[#B14EFF]/25 text-[#B14EFF] bg-[#B14EFF]/06 hover:bg-[#B14EFF]/15 transition-colors duration-200 cursor-default"
@@ -109,7 +109,7 @@ export default function About() {
                                 ].map(({ emoji, text }) => (
                                     <div key={text} className="flex items-center gap-3">
                                         <span className="text-base">{emoji}</span>
-                                        <span className="text-sm text-[#8888aa]">{text}</span>
+                                        <span className="text-xs text-[#8888aa]">{text}</span>
                                     </div>
                                 ))}
                             </div>

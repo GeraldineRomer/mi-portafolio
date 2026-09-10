@@ -29,7 +29,7 @@ export default function Contact() {
                     className="flex items-center gap-4 mb-14"
                 >
                     <span className="font-mono text-[18px] text-[#B14EFF] tracking-widest">
-                        // 06. contacto
+                        // 07. contacto
                     </span>
                     <div className="flex-1 h-px bg-gradient-to-r from-[#B14EFF]/30 to-transparent" />
                 </motion.div>

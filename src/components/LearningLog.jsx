@@ -28,7 +28,7 @@ export default function LearningLog() {
                     className="flex items-center gap-4 mb-14"
                 >
                     <span className="font-mono text-[18px] text-[#B14EFF] tracking-widest">
-                        // 05. currently exploring
+                        // 06. currently exploring
                     </span>
                     <div className="flex-1 h-px bg-gradient-to-r from-[#B14EFF]/30 to-transparent" />
                 </motion.div>
@@ -55,7 +55,7 @@ export default function LearningLog() {
                     {/* Lista */}
                     <div className="flex flex-col">
                         {learning.map((item, i) => (
-                        <LearningItem key={item.text} item={item} index={i} />
+                            <LearningItem key={item.text} item={item} index={i} />
                         ))}
                     </div>
 
